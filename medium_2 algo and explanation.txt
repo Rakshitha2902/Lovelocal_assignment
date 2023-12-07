@@ -1,0 +1,33 @@
+
+Algorithm:
+
+1. Initialization:
+   - Initialize two candidates (`candidate1` and `candidate2`) and their corresponding counters (`count1` and `count2`) to track the majority elements.
+   - Start with both counters at 0.
+
+2. Finding Candidates:
+   - Iterate through the input array (`nums`).
+   - For each element:
+      - If it matches `candidate1`, increment `count1`.
+      - If it matches `candidate2`, increment `count2`.
+      - If `count1` is 0, assign the current element as `candidate1` and set `count1` to 1.
+      - If `count2` is 0, assign the current element as `candidate2` and set `count2` to 1.
+      - If none of the above conditions match, decrement both `count1` and `count2`.
+
+3. Counting Occurrences:
+   - Reset counters `count1` and `count2` to 0.
+   - Iterate through the array again.
+   - Count occurrences of elements matching `candidate1` and `candidate2`.
+
+4. Checking Majority:
+   - Check if the counts of `candidate1` and `candidate2` are greater than ⌊ n/3 ⌋, where `n` is the length of the input array.
+   - If yes, add the corresponding candidates to the result list.
+
+5. Return Result:
+   - Return the list containing the elements appearing more than ⌊ n/3 ⌋ times.
+
+Explanation:
+
+The algorithm efficiently finds elements that appear more than ⌊ n/3 ⌋ times in an array by iteratively narrowing down the candidates. It employs a voting mechanism where candidates are chosen and validated based on their counts. The final step ensures that the chosen candidates meet the specified frequency criterion.
+
+This approach is particularly useful in situations where you need to find elements with frequencies greater than a certain threshold in a given array.
